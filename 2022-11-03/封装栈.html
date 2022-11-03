@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Stack() {
+      this.item = []
+      Stack.prototype.push = function (element) {
+        this.item.push(element)
+      }
+      Stack.prototype.pop = function () {
+        return this.item.pop()
+      }
+      Stack.prototype.peek = function () {
+        return this.item[this.item.length - 1]
+      }
+      Stack.prototype.isEmpty = function () {
+        return this.item.length == 0
+      }
+      Stack.prototype.size = function () {
+        return this.item.length
+      }
+      Stack.prototype.toString = function () {
+        let resultString = ''
+        for (let i = 0; i < this.item.length; i++) {
+          resultString += this.item[i] + ' '
+        }
+        return resultString
+      }
+    }
+
+    let s = new Stack()
+    s.push(1)
+    s.push(3)
+    s.push(4)
+    s.push(1)
+    s.pop()
+    console.log(s);
+    console.log(s.toString());
+  </script>
+</body>
+
+</html>
