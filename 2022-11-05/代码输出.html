@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 200px;
+      height: 200px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .box2 {
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    <div class="box2">这是盒子2</div>
+  </div>
+
+  <script>
+    const obj = {
+      flag: true,
+      set Flag(value) {
+        this.flag = value
+      },
+      get Flag() {
+        return this.flag
+      }
+    }
+    const son = {
+      _proto_: obj
+    }
+    //开辟空间son,并将原型指向obj
+    console.log(son);
+    console.log(obj);
+    son.Flag = 'change'
+    // 设置的是son中的Flag，不影响obj中的son值
+    console.log(son.Flag);
+    console.log(obj.Flag);
+  </script>
+</body>
+
+</html>
